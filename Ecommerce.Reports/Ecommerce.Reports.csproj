@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Templts\PDFs\**" />
+    <EmbeddedResource Remove="Templts\PDFs\**" />
+    <EntityDeploy Remove="Templts\PDFs\**" />
+    <None Remove="Templts\PDFs\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DevExpress.Reporting.Core" Version="22.2.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Ecommerce.DTO\Ecommerce.DTO.csproj" />
+    <ProjectReference Include="..\Ecommerce.Helper\Ecommerce.Helper.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="DevexpressReports\InvoiceReport2.cs">
+      <SubType>XtraReport</SubType>
+    </Compile>
+    <Compile Update="DevexpressReports\InvoicesList.cs" />
+  </ItemGroup>
+
+</Project>

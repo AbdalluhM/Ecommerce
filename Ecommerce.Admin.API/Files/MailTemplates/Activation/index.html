@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>verify your email to activate your account</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        @font-face {
+            font-family: "Tajawal-Bold";
+            src: url("%tajawalBoldFont%") format("truetype");
+        }
+
+        @font-face {
+            font-family: "Tajawal-regular";
+            src: url("%tajawalRegularFont%") format("truetype");
+        }
+
+        body {
+            font-family: "Tajawal-regular";
+        }
+
+        .email-page {
+            width: 820px;
+            margin-right: auto;
+            margin-left: auto;
+            padding: 48px;
+        }
+
+        .email-page .logo {
+            width: 140px;
+            height: 30px;
+            margin-bottom: 16px;
+        }
+
+        .email-page .title {
+            font-size: 32px;
+            color: #4B4E6D;
+            margin: 0;
+            margin-bottom: 16px;
+        }
+
+        .email-page .content {
+            font-size: 16px;
+            color: #4B4E6D;
+            margin: 0;
+            margin-bottom: 16px;
+        }
+
+        .email-page .info {
+            font-size: 16px;
+            color: #4B4E6D;
+            margin: 0;
+            margin-bottom: 16px;
+        }
+
+        .email-page .info span {
+            font-family: "Tajawal-Bold";
+        }
+
+        .email-page .verify {
+            text-decoration: none;
+            background-color: #0074D7;
+            padding: 8px 0;
+            text-align: center;
+            border-radius: 4px;
+            color: #fff;
+            text-transform: uppercase;
+            margin: 20px 0;
+            display: block;
+            width: 130px;
+        }
+
+        .email-page .expired-content {
+            font-size: 16px;
+            color: #92A1B6;
+            margin: 0;
+            margin-bottom: 16px;
+        }
+
+        .email-page .hr {
+            border: 1px solid #F4F5F8;
+        }
+
+        .email-page .dimmed {
+            font-size: 16px;
+            color: #92A1B6;
+        }
+
+        .email-page .dimmed a {
+            color: #0074D7;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="email-page">
+        <img class="logo" src="%dexefLogoImg%" alt="DEXEF" />
+        <h1 class="title">Dear Customer %customerName%</h1>
+        <p class="content">
+            You have received this e-mail message as a result of one of the following actions: You have
+            registered with this email at our portal site
+        </p>
+        <p class="info">
+            You need to <span>verify your email</span> to activate your account. <br /> To do either action,
+            please click on the following button:
+        </p>
+        <a class="verify" href="%verifyLink%">verify</a>
+        <p class="expired-content"></p>
+        <p class="content">Thanks for your time, <br /> The DEXEF Team</p>
+        <hr class="hr" />
+        <p class="dimmed">
+            Need help? <a href="%contactUsLink%">Contact us.</a> <br />
+            © 2022 DEXEF | All Rights Reserved. <br />
+            DEXEF Company, 1 Ibrahim Basha Street, Quweisna, Al Minufiyah, Egypt
+        </p>
+    </div>
+</body>
+
+</html>

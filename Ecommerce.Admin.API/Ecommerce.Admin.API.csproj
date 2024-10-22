@@ -1,0 +1,159 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="BaseReponse.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Properties\launchSettings.json" />
+  </ItemGroup>
+  <!-- 
+  <ItemGroup>
+    <None Include="Properties\launchSettings.json" />
+  </ItemGroup>
+-->
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
+    <PackageReference Include="Dexef.Payment" Version="1.1.264.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.13" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0" />
+    <PackageReference Include="Serilog.AspNetCore" Version="5.0.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="6.2.3" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="6.2.3" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="6.2.3" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Ecommerce.BLL\Ecommerce.BLL.csproj" />
+    <ProjectReference Include="..\Ecommerce.Core\Ecommerce.Core.csproj" />
+    <ProjectReference Include="..\Ecommerce.DTO\Ecommerce.DTO.csproj" />
+    <ProjectReference Include="..\Ecommerce.Reports\Ecommerce.Reports.csproj" />
+    <ProjectReference Include="..\Ecommerce.Repositroy\Ecommerce.Repositroy.csproj" />
+  </ItemGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <EnvironmentName>Development</EnvironmentName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <EnvironmentName>Production</EnvironmentName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Stage|AnyCPU'">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <EnvironmentName>Staging</EnvironmentName>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Remove="appsettings.json" />
+    <Content Remove="appsettings.*.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="appsettings.json" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="appsettings.*.json" Exclude="appsettings.$(EnvironmentName).json" DependentUpon="appsettings.json" CopyToOutputDirectory="Never" />
+    <None Remove="Files\Admin\Addon\AddonBase\3b94e439-d7c4-4c02-9f99-d980428cf248.png" />
+    <None Remove="Files\PDFs\Invoices\Assets\img\Cancelled.png" />
+    <None Remove="Files\PDFs\Invoices\Assets\img\Draft.png" />
+    <None Remove="Files\PDFs\Invoices\Assets\img\Paid.png" />
+    <None Remove="Files\PDFs\Invoices\Assets\img\Refunded.png" />
+    <None Remove="Files\PDFs\Invoices\Assets\img\Unpaid.png" />
+    <Content Include="appsettings.$(EnvironmentName).json" DependentUpon="appsettings.json" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Files\Admin\Addon\AddonBase\" />
+    <Folder Include="Files\Admin\Addon\AddonSlider\" />
+    <Folder Include="Files\Admin\Application\ApplicationSlider\" />
+    <Folder Include="Files\Admin\Application\ApplicationVersion\" />
+    <Folder Include="Files\Admin\Feature\FeatureBase\" />
+    <Folder Include="Files\Admin\Module\ModuleSlider\" />
+    <Folder Include="Files\Admin\AdminProfile\" />
+    <Folder Include="Files\Feature\" />
+    <Folder Include="Files\PDFs\Invoices\Temp\" />
+    <Folder Include="Properties\PublishProfiles\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Files\MailTemplates\Activation\index.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Files\MailTemplates\ChangePassword\index.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Files\MailTemplates\ContactUs\index.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Files\MailTemplates\Fonts\Tajawal-Bold.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Files\MailTemplates\Fonts\Tajawal-Regular.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Files\MailTemplates\Images\dexef_logo.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Files\MailTemplates\Invoice\index.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Files\PDFs\Invoices\Assets\img\ar\Cancelled.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Files\PDFs\Invoices\Assets\img\ar\Draft.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Files\PDFs\Invoices\Assets\img\ar\Paid.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Files\PDFs\Invoices\Assets\img\ar\Refunded.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Files\PDFs\Invoices\Assets\img\ar\Unpaid.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Files\PDFs\Invoices\Assets\img\dexef_logo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Files\PDFs\Invoices\Assets\img\en\Cancelled.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Files\PDFs\Invoices\Assets\img\en\Draft.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Files\PDFs\Invoices\Assets\img\en\Paid.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Files\PDFs\Invoices\Assets\img\en\Refunded.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Files\PDFs\Invoices\Assets\img\en\Unpaid.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Files\PDFs\Invoices\Assets\style.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <Target Name="RenameAppsettings" AfterTargets="Publish">
+    <Move SourceFiles="$(PublishDir)\appsettings.$(EnvironmentName).json" DestinationFiles="$(PublishDir)\appsettings.$(EnvironmentName).json" />
+  </Target>
+</Project>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
